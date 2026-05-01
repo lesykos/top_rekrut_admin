@@ -6,8 +6,10 @@ const httpClient = (url: string, options: RequestInit = {}) => {
         options.headers = new Headers({ Accept: 'application/json' });
     }
     const headers = options.headers as Headers;
-    const token = localStorage.getItem('token') || null;
-    headers.set('Authorization', `Bearer ${token}`);
+    const token = localStorage.getItem('token');
+    if (token) {
+        headers.set('Authorization', `Bearer ${token}`);
+    }
     return fetchUtils.fetchJson(url, options);
 };
 
