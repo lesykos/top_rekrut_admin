@@ -14,16 +14,24 @@ import ArmyUnitList from "./pages/army-units/army-unit-list";
 import ArmyUnitShow from "./pages/army-units/army-unit-show";
 import ArmyUnitEdit from "./pages/army-units/army-unit-edit";
 import ArmyUnitCreate from "./pages/army-units/army-unit-create";
+import VacancyList from "./pages/vacancies/vacancy-list";
+import VacancyShow from "./pages/vacancies/vacancy-show";
+import VacancyEdit from "./pages/vacancies/vacancy-edit";
+import VacancyCreate from "./pages/vacancies/vacancy-create";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
-    <Resource name="army-branches" options={{ label: 'Branches' }}
-        list={ArmyBranchList} show={ArmyBranchShow} 
-        edit={ArmyBranchEdit} create={ArmyBranchCreate} />
+    <Resource name="vacancies" options={{ label: 'Vacancies' }}
+        list={VacancyList} show={VacancyShow} 
+        edit={VacancyEdit} create={VacancyCreate} />
 
     <Resource name="army-units" options={{ label: 'Units' }}
         list={ArmyUnitList} show={ArmyUnitShow} 
         edit={ArmyUnitEdit} create={ArmyUnitCreate} />
+
+    <Resource name="army-branches" options={{ label: 'Branches' }}
+        list={ArmyBranchList} show={ArmyBranchShow} 
+        edit={ArmyBranchEdit} create={ArmyBranchCreate} />
 
     <Resource name="rank-groups" options={{ label: 'Rank groups' }}
         list={RankGroupList} show={RankGroupShow} 
