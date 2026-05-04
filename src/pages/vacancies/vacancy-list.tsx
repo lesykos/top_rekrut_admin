@@ -5,10 +5,10 @@ const VacancyList = () => (
         <DataTable>
             <DataTable.Col source="id" />
             <DataTable.Col source="name" />
-            <DataTable.Col source="army_unit_id">
+            <DataTable.Col source="army_unit_id" label="Unit">
                 <ReferenceField source="army_unit_id" reference="army-units" />
             </DataTable.Col>
-            <DataTable.Col source="rank_group_id">
+            <DataTable.Col source="rank_group_id" label="Rank">
                 <ReferenceField source="rank_group_id" reference="rank-groups" />
             </DataTable.Col>
             <DataTable.Col source="created_at">
