@@ -5,9 +5,9 @@ const ArmyUnitCreate = () => (
         <SimpleForm>
             <TextInput source="name" />
             <TextInput source="slug" />
-            <TextInput source="description" />
+            <TextInput source="description" multiline rows={3} />
             <TextInput source="website" />
-            {/* <ReferenceInput source="army_branch_id" reference="army_branches" /> */}
+            <ReferenceInput source="army_branch_id" reference="army-branches" />
         </SimpleForm>
     </Create>
 );

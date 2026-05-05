@@ -1,15 +1,18 @@
-import { Edit, ReferenceInput, SimpleForm, TextInput } from 'react-admin';
+import { Edit, ReferenceInput, SimpleForm, TextInput, RadioButtonGroupInput } from 'react-admin';
 
 const VacancyEdit = () => (
     <Edit>
         <SimpleForm>
             <TextInput source="name" />
             <TextInput source="slug" />
-            <TextInput source="description" />
-            <TextInput source="responsibilities" />
-            <TextInput source="requirements" />
-            <TextInput source="conditions" />
-            <TextInput source="service_type" />
+            <TextInput source="description" multiline rows={5} />
+            <TextInput source="responsibilities" multiline rows={7} />
+            <TextInput source="requirements"multiline rows={7} />
+            <TextInput source="conditions" multiline rows={7} />
+            <RadioButtonGroupInput source="service_type" choices={[
+                { id: 'rear', name: 'Rear' },
+                { id: 'combat', name: 'Combat' },
+            ]} />
             <ReferenceInput source="army_unit_id" reference="army-units" />
             <ReferenceInput source="rank_group_id" reference="rank-groups" />
         </SimpleForm>
